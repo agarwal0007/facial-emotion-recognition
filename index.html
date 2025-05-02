@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Detection</title>
+    <style>
+        body { font-family: Arial; padding: 30px; }
+        input { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <h2>Upload 5-Frame Sequence</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="images" multiple required accept="image/*" /><br/>
+        <button type="submit">Predict Emotion</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted Emotion: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
